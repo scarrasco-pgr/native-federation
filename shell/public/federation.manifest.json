@@ -1,6 +1,1 @@
-{
-  "mismatch": "http://localhost:4204/remoteEntry.json",
-  "notes": "http://localhost:4203/remoteEntry.json",
-  "recipes": "http://localhost:4202/remoteEntry.json",
-  "users": "http://localhost:4201/remoteEntry.json"
-}
+{}

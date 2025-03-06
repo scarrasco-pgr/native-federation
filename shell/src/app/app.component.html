@@ -5,17 +5,20 @@
     mode="side"
     position="end"
     appResizeDrawer
-    (openedStart)="initializeNotesApp()"
   >
-    <div class="flex">
-      <div class="cursor-col-resize border-l-4 border-indigo-500 w-1.5"></div>
-      <ng-container *ngComponentOutlet="notesApp"></ng-container>
+    <div class="h-full">
+      <iframe
+        width="100%"
+        height="100%"
+        src="http://localhost:4203"
+        loading="lazy"
+      ></iframe>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-nav-bar (toggle)="drawer.toggle()" />
     <main>
-      <router-outlet />
+      <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

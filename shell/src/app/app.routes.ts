@@ -1,5 +1,5 @@
-import { loadRemoteModule } from '@angular-architects/native-federation';
 import { Routes } from '@angular/router';
+import { IframeContainerComponent } from './components/iframe-container/iframe-container.component';
 
 export const SHELL_ROUTES: Routes = [
   {
@@ -9,17 +9,23 @@ export const SHELL_ROUTES: Routes = [
   },
   {
     path: 'recipes',
-    loadChildren: () =>
-      loadRemoteModule('recipes', './Routes').then((r) => r.RECIPES_ROUTES),
+    component: IframeContainerComponent,
+    data: {
+      src: 'http://localhost:4202',
+    },
   },
   {
     path: 'users',
-    loadChildren: () =>
-      loadRemoteModule('users', './Routes').then((r) => r.USERS_ROUTES),
+    component: IframeContainerComponent,
+    data: {
+      src: 'http://localhost:4201',
+    },
   },
   {
     path: 'mismatch',
-    loadComponent: () =>
-      loadRemoteModule('mismatch', './Component').then((c) => c.AppComponent),
+    component: IframeContainerComponent,
+    data: {
+      src: 'http://localhost:4204',
+    },
   },
 ];
