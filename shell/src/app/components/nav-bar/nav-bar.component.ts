@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { ThemePicker } from '../theme-picker/theme-picker.component';
 @Component({
   selector: 'app-nav-bar',
   imports: [
@@ -17,6 +18,7 @@ import { Store } from '@ngrx/store';
     MatIconModule,
     RouterLink,
     RouterLinkActive,
+    ThemePicker,
   ],
   standalone: true,
   templateUrl: './nav-bar.component.html',

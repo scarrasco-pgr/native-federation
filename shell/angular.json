@@ -58,9 +58,32 @@
             "outputPath": "dist/shell",
             "polyfills": ["zone.js", "es-module-shims"],
             "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules", "src", "src/styles"]
+            },
             "styles": [
               "src/styles.scss",
-              "@angular/material/prebuilt-themes/azure-blue.css"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              {
+                "bundleName": "magenta-violet",
+                "inject": false,
+                "input": "@angular/material/prebuilt-themes/magenta-violet.css"
+              },
+              {
+                "bundleName": "rose-red",
+                "inject": false,
+                "input": "@angular/material/prebuilt-themes/rose-red.css"
+              },
+              {
+                "bundleName": "azure-blue",
+                "inject": false,
+                "input": "@angular/material/prebuilt-themes/azure-blue.css"
+              },
+              {
+                "bundleName": "cyan-orange",
+                "inject": false,
+                "input": "@angular/material/prebuilt-themes/cyan-orange.css"
+              }
             ],
             "tsConfig": "tsconfig.app.json"
           }
