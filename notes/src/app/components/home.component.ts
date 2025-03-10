@@ -6,10 +6,10 @@ import {
 } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Store } from '@ngrx/store';
+import { SharedService } from '@shared/shared.service';
 import { UsersActions } from '../store/notes.actions';
 import { selectError, selectLoading } from '../store/notes.feature';
 import { UserListComponent } from './note-list.component';
-
 @Component({
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,9 +26,11 @@ import { UserListComponent } from './note-list.component';
 })
 export class HomeComponent implements OnInit {
   #store = inject(Store);
+  sharedService = inject(SharedService);
   isLoading = this.#store.selectSignal(selectLoading);
   error = this.#store.selectSignal(selectError);
   ngOnInit(): void {
+    this.sharedService.log();
     this.#store.dispatch(UsersActions.loadNotes());
   }
 }
